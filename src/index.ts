@@ -17,6 +17,6 @@ export async function generateReport(inputFile: string, outputFile: string) {
       warnings: messages.filter(m => m.severity === 'warning').length
     };
   } catch (error) {
-    throw new Error(`Failed to generate report: ${error.message}`);
+    throw new Error(`Failed to generate report: ${(error as Error).message}`);
   }
 }
