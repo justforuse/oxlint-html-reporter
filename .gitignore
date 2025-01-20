@@ -1,0 +1,4 @@
+node_modules
+.bolt
+dist
+oxlint-report.html
