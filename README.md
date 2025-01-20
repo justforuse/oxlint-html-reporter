@@ -1,6 +1,6 @@
 # oxlint-html-reporter
 
-Generate beautiful HTML reports from oxlint JSON output.
+Generate beautiful HTML reports from oxlint output.
 
 ## Installation
 

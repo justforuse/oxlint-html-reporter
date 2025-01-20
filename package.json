@@ -17,10 +17,25 @@
     "html",
     "reporter",
     "report",
-    "lint"
+    "lint",
+    "linter",
+    "oxc",
+    "javascript",
+    "typescript"
   ],
-  "author": "Allen<allenforuse@gmail.com>",
+  "author": {
+    "name": "Allen",
+    "email": "allenforuse@gmail.com"
+  },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justforuse/oxlint-html-reporter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/justforuse/oxlint-html-reporter/issues"
+  },
+  "homepage": "https://github.com/justforuse/oxlint-html-reporter",
   "dependencies": {
     "commander": "^11.1.0",
     "tailwindcss": "^3.4.0"
