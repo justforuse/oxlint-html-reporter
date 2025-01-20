@@ -2,6 +2,8 @@
 
 Generate beautiful HTML reports from oxlint output.
 
+<img src="./demo.png" alt="demo" />
+
 ## Installation
 
 ```bash
