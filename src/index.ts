@@ -5,7 +5,7 @@ import type { OxlintResult } from './types.js';
 export async function generateReport(inputFile: string, outputFile: string) {
   try {
     const jsonContent = await fs.readFile(inputFile, 'utf-8');
-    const messages = JSON.parse(jsonContent) as OxlintResult;
+    const messages = JSON.parse(jsonContent).diagnostics as OxlintResult;
 
     const html = generateHTML(messages);
     await fs.writeFile(outputFile, html, 'utf-8');
