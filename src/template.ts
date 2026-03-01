@@ -33,7 +33,7 @@ export const generateHTML = (messages: OxlintResult) => {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oxlint Report</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="bg-gray-50 min-h-screen p-4 sm:p-8">
     <div class="max-w-4xl mx-auto">
