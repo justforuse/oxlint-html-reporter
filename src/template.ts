@@ -40,7 +40,7 @@ export const generateHTML = (messages: OxlintResult) => {
         <div class="mb-6 sm:mb-8">
             <div class="flex flex-col sm:flex-row items-center gap-4">
                 <img
-                    src="https://cdn.jsdelivr.net/gh/oxc-project/oxc-assets/round.svg"
+                    src="https://cdn.jsdelivr.net/gh/oxc-project/oxc-assets/icon-flat-dark.svg"
                     alt="Oxlint Logo"
                     class="w-12 h-12"
                 />
