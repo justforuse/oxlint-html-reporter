@@ -12,6 +12,10 @@
     "test": "vitest",
     "prepublishOnly": "npm run build"
   },
+  "files": [
+    "dist",
+    "bin"
+  ],
   "keywords": [
     "oxlint",
     "html",
