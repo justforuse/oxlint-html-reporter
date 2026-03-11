@@ -2,3 +2,5 @@ node_modules
 .bolt
 dist
 oxlint-report.html
+pnpm-*.html
+oxlint*.json
