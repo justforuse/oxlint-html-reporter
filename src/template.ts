@@ -26,15 +26,19 @@ export const generateHTML = (messages: OxlintResult) => {
   const ruleSections = sortedEntries.map(([code, ruleMessages]) => {
     const first = ruleMessages[0];
     const severity = first.severity;
-    const violationItems = ruleMessages.map(msg => `
+    const violationItems = ruleMessages.map(msg => {
+      const location = msg.labels?.[0]?.span;
+      const locationText = location ? `:${location.line}:${location.column}` : '';
+      return `
       <li class="py-2 px-3 rounded odd:bg-gray-50/80 border-b border-gray-100 last:border-0">
         <p class="text-gray-700 break-words">${msg.message}</p>
         <div class="flex flex-wrap items-center gap-2 mt-1 text-sm text-gray-500">
-          <span class="font-medium break-all">${msg.filename}</span>
+          <span class="font-medium break-all">${msg.filename}<span class="text-blue-600 font-mono">${locationText}</span></span>
         </div>
         ${msg.help ? `<p class="text-gray-600 text-sm mt-1 break-words">${msg.help}</p>` : ''}
       </li>
-    `).join('');
+    `;
+    }).join('');
 
     return `
     <details class="mb-6 bg-white rounded-lg shadow-md overflow-hidden group/details">

@@ -1,3 +1,15 @@
+export interface LabelSpan {
+  offset: number;
+  length: number;
+  line: number;
+  column: number;
+}
+
+export interface Label {
+  span: LabelSpan;
+  label?: string;
+}
+
 export interface OxlintMessage {
   message: string;
   code: string;
@@ -6,7 +18,7 @@ export interface OxlintMessage {
   url?: string;
   help?: string;
   filename: string;
-  labels: any[];
+  labels: Label[];
   related: any[];
 }
 

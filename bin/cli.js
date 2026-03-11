@@ -22,6 +22,8 @@ program
   .argument('[output]', 'Output HTML file', 'oxlint-report.html')
   .action(async (output) => {
     try {
+      const startTime = performance.now();
+      
       // Create a temporary file for the JSON input
       const tmpFile = 'oxlint-temp.json';
       
@@ -30,14 +32,17 @@ program
       await fs.writeFile(tmpFile, jsonData);
 
       const result = await generateReport(tmpFile, output);
+      
+      // Clean up temporary file
+      await fs.unlink(tmpFile);
+      
+      const elapsed = (performance.now() - startTime) / 1000;
       console.log(`✨ Report generated successfully at ${output}`);
       console.log(`📊 Summary:`);
       console.log(`   Total Issues: ${result.totalIssues}`);
       console.log(`   Errors: ${result.errors}`);
       console.log(`   Warnings: ${result.warnings}`);
-
-      // Clean up temporary file
-      await fs.unlink(tmpFile);
+      console.log(`   Time: ${elapsed.toFixed(3)}s`);
     } catch (error) {
       console.error('❌ Error:', error.message);
       process.exit(1);
