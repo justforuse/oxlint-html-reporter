@@ -15,7 +15,7 @@ interface ReportMeta {
   sourceMap?: Map<string, string[]>
 }
 
-const CONTEXT_LINES = 2
+const CONTEXT_LINES = 5
 
 function escapeHtml(str: string): string {
   return str
@@ -206,6 +206,7 @@ export const generateHTML = (messages: OxlintResult, meta: ReportMeta = {}) => {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oxlint Report</title>
+    <link rel="icon" type="image/svg+xml" href="https://cdn.jsdelivr.net/gh/oxc-project/oxc-assets/icon-flat-dark.svg">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
       details summary::-webkit-details-marker { display: none; }
